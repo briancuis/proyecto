@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from App.models import futbolista
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 # Create your views here.
 
@@ -14,6 +14,21 @@ class FutbolistaCrear(CreateView):
   model = futbolista
   success_url = "/panel-futbolista"
   fields = ["nombre", "equipo", "edad"]
+
+class FutbolistaBorrar(DeleteView):
+    model = futbolista
+    success_url = "/panel-futbolista"
+
+class FutbolistaUpdate(UpdateView):
+    model = futbolista
+    success_url = "/panel-futbolista"
+    fields = ["nombre", "equipo", "edad"]
+
+
+
+
+
+
 
 
 

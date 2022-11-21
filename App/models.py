@@ -8,4 +8,4 @@ class futbolista(models.Model):
 
 
     def __str__(self):
-        return f"{self.nombre},{self.equipo},{self.edad}"
+        return f"{self.nombre},{self.equipo},{self.id}"

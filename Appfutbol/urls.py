@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from App.views import index, FutbolistaList, FutbolistaCrear
+from App.views import index, FutbolistaList, FutbolistaCrear,FutbolistaBorrar, FutbolistaUpdate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index', index),
-    path('panel-futbolista/', FutbolistaList.as_view()),
-    path('panel-futbolista/crear', FutbolistaCrear.as_view()),
+    path('panel-futbolista/', FutbolistaList.as_view(), name="F-list"),
+    path('panel-futbolista/crear', FutbolistaCrear.as_view(), name="F-create"),
+    path('panel-futbolista/<int:pk>/borrar', FutbolistaBorrar.as_view(), name="F-delete"),
+    path('panel-futbolista/<int:pk>/actualizar', FutbolistaUpdate.as_view(), name="F-update")
 ]

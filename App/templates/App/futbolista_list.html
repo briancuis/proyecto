@@ -12,7 +12,11 @@
 {% block buscar %} {% endblock %}
 
 {% for futbolista in object_list %}
-    <li>{{futbolista}}</li>
+    <li>
+        {{futbolista}}
+        <a href="{% url 'F-delete' futbolista.id %}">Borrar</a>
+        <a href="{% url 'F-update' futbolista.id %}">Actualizar</a>
+    </li>
 {% endfor %}    
 </ul>
 
